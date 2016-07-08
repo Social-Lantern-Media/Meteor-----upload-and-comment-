@@ -1,0 +1,32 @@
+<head>
+  <title>Lazy Notes</title>
+</head>
+
+<body>
+  <h1>Lazest Note taking scan app</h1>
+  
+  <p>This demo works best in Chrome, Firefox or Opera. <a href="http://caniuse.com/#search=getusermedia">Safari and IE don't support the camera API</a>, unfortunately.</p>
+  <p>The same codebase can produce an iOS app though, which has full camera support, so the above limitations for iOS aren't that relevant.</p>
+  
+  <p>There are more features than meet the eye. Check out the README!</p>
+  
+  <div id="notes-input">
+    <button id="take-photo">Had a thought? Take a photo!</button>
+    <form>
+      Or, enter a note:<br/>
+      <input type="text" placeholder="I R GROOD">
+      <input type="submit" value="Save">
+    </form>
+  </div>  
+
+  {{#each notes}}
+    <div>
+      <h2>{{livestamp timestamp}}</h2>
+      {{#if photo}}
+        <img src="{{photo}}">
+      {{else}}
+        <p>{{note}}</p>
+      {{/if}}  
+    </div>
+  {{/each}}
+</body>
